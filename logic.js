@@ -157,7 +157,7 @@ function render(){
   else { $("#nextDate").textContent = "Term complete"; $("#nextWhat").textContent = "15 Dec 2026"; }
 
   // log
-  $("#log").innerHTML = (STATE.log || []).slice(0,20).map(l=>`<li><span class="d">${esc(l.d)}</span><span>${esc(l.what)}<span class="who">${esc(l.who)}</span></span></li>`).join("")
+  if ($("#log")) $("#log").innerHTML = (STATE.log || []).slice(0,20).map(l=>`<li><span class="d">${esc(l.d)}</span><span>${esc(l.what)}<span class="who">${esc(l.who)}</span></span></li>`).join("")
     || `<li><span class="d"></span><span>No changes yet.</span></li>`;
 
   $("#editnote").hidden = !EDITABLE;

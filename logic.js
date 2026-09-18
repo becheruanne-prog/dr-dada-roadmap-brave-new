@@ -142,7 +142,7 @@ function render(){
   }).join("");
 
   // team
-  $("#team").innerHTML = TEAM.map(t=>`<div><b>${esc(t.n)}</b><span class="eyebrow" style="display:block;margin:2px 0 6px;text-transform:none;letter-spacing:0">${esc(t.r)}</span><span>${esc(t.w)}</span></div>`).join("");
+  if ($("#team")) $("#team").innerHTML = TEAM.map(t=>`<div><b>${esc(t.n)}</b><span class="eyebrow" style="display:block;margin:2px 0 6px;text-transform:none;letter-spacing:0">${esc(t.r)}</span><span>${esc(t.w)}</span></div>`).join("");
 
   // checklist
   $("#checklist").innerHTML = STATE.checklist.map(c=>`<li><div><div class="t">${esc(c.t)}</div>${c.h?`<div class="how">${esc(c.h)}</div>`:""}</div>${chip(c.s, c.id, "check")}</li>`).join("");

@@ -292,10 +292,19 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-si
 
   <section>
     <div class="sechead">
-      <h2>Team and roles</h2>
-      <p>Division of labour per clause 1.2. One name per responsibility.</p>
+      <h2>How we communicate</h2>
+      <p>Two channels, each with one job.</p>
     </div>
-    <div class="who" id="team"></div>
+    <div class="week">
+      <div class="panel accent">
+        <h3 style="margin-bottom:8px">WhatsApp group</h3>
+        <p>Fast validation only: a quick yes or no on a thumbnail, a title, a still, a recording slot. Nothing that needs to be found again later.</p>
+      </div>
+      <div class="panel">
+        <h3 style="margin-bottom:8px">Email, to the whole team group</h3>
+        <p>Strategic planning, organisation, deliverables, scheduling and every approval that counts. Decisions are confirmed by email, per clause 9 of the agreement.</p>
+      </div>
+    </div>
   </section>
 
 
@@ -451,7 +460,7 @@ function render(){
   }).join("");
 
   // team
-  $("#team").innerHTML = TEAM.map(t=>`<div><b>${esc(t.n)}</b><span class="eyebrow" style="display:block;margin:2px 0 6px;text-transform:none;letter-spacing:0">${esc(t.r)}</span><span>${esc(t.w)}</span></div>`).join("");
+  if ($("#team")) $("#team").innerHTML = TEAM.map(t=>`<div><b>${esc(t.n)}</b><span class="eyebrow" style="display:block;margin:2px 0 6px;text-transform:none;letter-spacing:0">${esc(t.r)}</span><span>${esc(t.w)}</span></div>`).join("");
 
   // checklist
   $("#checklist").innerHTML = STATE.checklist.map(c=>`<li><div><div class="t">${esc(c.t)}</div>${c.h?`<div class="how">${esc(c.h)}</div>`:""}</div>${chip(c.s, c.id, "check")}</li>`).join("");

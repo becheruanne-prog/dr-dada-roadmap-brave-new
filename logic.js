@@ -18,7 +18,7 @@ const DATES = [
   {d:"Fri 18 Sep · 7:00 AM PT", w:"Editing Direction Discussion (Zoom)", who:"Anne, Shannon, Prashmi"},
   {d:"after the audit", w:"YouTube ads start only after the technical audit: spend goes on the current assets or on the new recordings, decided together. Focus until then: channel makeover.", who:"Brave New, client card"},
   {d:"22 to 25 Sep", w:"Batch recording days, 8 to 10 long-form pieces", who:"Dr. Dada, Prashmi; Anne directs remotely"},
-  {d:"Fri 25 Sep · 7:00 AM PT (proposed)", w:"Week 2 review and first weekly catch-up", who:"Both"},
+  {d:"Fri 25 Sep · 9:00 AM PT (proposed)", w:"Week 2 review and first weekly catch-up", who:"Both"},
   {d:"26 Sep to 12 Oct", w:"Dr. Dada away. Build phase, no filming.", who:"Brave New builds; Prashmi edits and publishes"},
   {d:"13 to 16 Oct", w:"Handover session 1, new channel look live, monthly review 1", who:"Both"},
   {d:"19 to 30 Oct", w:"Second recording block", who:"Dr. Dada, Prashmi; Anne directs"},

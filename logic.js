@@ -16,7 +16,7 @@ const DATES = [
   {d:"Tue 15 Sep", w:"Agreement effective. Services start.", who:"Both"},
   {d:"Thu 17 Sep", w:"Recording topic list to Dr. Dada", who:"Brave New"},
   {d:"Fri 18 Sep · 7:00 AM PT", w:"Editing Direction Discussion (Zoom)", who:"Anne, Shannon, Prashmi"},
-  {d:"after 21 Sep", w:"YouTube ad campaigns start after the technical audit. Decision on current videos vs new recordings. Focus until then: channel makeover.", who:"Brave New, client card"},
+  {d:"after the audit", w:"YouTube ads start only after the technical audit: spend goes on the current assets or on the new recordings, decided together. Focus until then: channel makeover.", who:"Brave New, client card"},
   {d:"22 to 25 Sep", w:"Batch recording days, 8 to 10 long-form pieces", who:"Dr. Dada, Prashmi; Anne directs remotely"},
   {d:"Fri 25 Sep · 7:00 AM PT (proposed)", w:"Week 2 review and first weekly catch-up", who:"Both"},
   {d:"26 Sep to 12 Oct", w:"Dr. Dada away. Build phase, no filming.", who:"Brave New builds; Prashmi edits and publishes"},
@@ -31,12 +31,12 @@ const ROWS = [
   {lbl:"Month 1 · Foundation", sub:"15 Sep to 15 Oct", cls:"phase", s:[8,15], e:[9,15], txt:"Audit, topics, scripts, identity, thumbnails"},
   {lbl:"Month 2 · Growth plan and handover", sub:"15 Oct to 15 Nov", cls:"phase", s:[9,15], e:[10,15], txt:"Handovers, sign-off, batch 1 scenarios"},
   {lbl:"Month 3 · Commercial production", sub:"15 Nov to 15 Dec", cls:"phase", s:[10,15], e:[11,15], txt:"Batch 1 directed and published, batch 2 scenarios"},
-  {lbl:"YouTube advertising", sub:"weekly optimisation", cls:"ads", s:[8,22], e:[11,15], txt:"After the audit: current videos or new recordings, USD 500 per month on the client card"},
+  {lbl:"YouTube advertising", sub:"weekly optimisation", cls:"ads", s:[8,22], e:[11,15], txt:"Starts after the audit: current assets or new recordings, USD 500 per month on the client card"},
   {lbl:"Recording blocks", sub:"Dr. Dada on camera", cls:"rec", multi:[[[8,22],[8,25],"Block 1 · 22 to 25 Sep"],[[9,19],[9,30],"Block 2 · 19 to 30 Oct"],[[10,16],[10,20],"Batch 1 · w/o 16 Nov"]]},
   {lbl:"Dr. Dada away", sub:"no filming", cls:"away", s:[8,26], e:[9,12], txt:"Build phase"},
 ];
 const MARKS = [
-  {d:[8,22], t:"Ad campaigns start, after the audit", review:false},
+  {d:[8,22], t:"Ads decision, after the audit", review:false},
   {d:[8,25], t:"Week 2 review", review:true},
   {d:[9,14], t:"Handover 1, monthly review 1", review:true},
   {d:[10,13], t:"Strategy sign-off, batch 1 scenarios", review:false},
@@ -151,7 +151,7 @@ function render(){
   $("#dates").innerHTML = DATES.map(d=>`<tr><td class="d">${esc(d.d)}</td><td>${esc(d.w)}</td><td style="color:var(--muted)">${esc(d.who)}</td></tr>`).join("");
 
   // next fixed date
-  const fixed = [[8,17,"Recording topic list to Dr. Dada"],[8,18,"Editing Direction Discussion, 7:00 AM PT"],[8,22,"Recording days begin, ad campaigns start"],[8,25,"Week 2 review"],[9,13,"Handover session 1"],[9,19,"Second recording block"],[10,2,"Handover session 2"],[10,13,"Strategy sign-off"],[10,16,"Mid-term review"],[11,15,"End of Term"]];
+  const fixed = [[8,17,"Recording topic list to Dr. Dada"],[8,18,"Editing Direction Discussion, 7:00 AM PT"],[8,22,"Recording days begin, ads decision after the audit"],[8,25,"Week 2 review"],[9,13,"Handover session 1"],[9,19,"Second recording block"],[10,2,"Handover session 2"],[10,13,"Strategy sign-off"],[10,16,"Mid-term review"],[11,15,"End of Term"]];
   const nx = fixed.map(([m,d,t])=>({date:new Date(2026,m,d),t})).find(f=>f.date>=today);
   if (nx){ $("#nextDate").textContent = nx.date.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"}); $("#nextWhat").textContent = nx.t; }
   else { $("#nextDate").textContent = "Term complete"; $("#nextWhat").textContent = "15 Dec 2026"; }
